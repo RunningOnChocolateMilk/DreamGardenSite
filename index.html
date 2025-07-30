@@ -466,6 +466,7 @@
                 <nav>
                     <ul class="nav-links">
                         <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="#waitlist">Join Waitlist</a></li>
                         <li><a href="privacy.html">Privacy</a></li>
                     </ul>
@@ -482,7 +483,7 @@
                 <h1 class="hero-title">Australia's AI-powered gardening companion</h1>
                 <p class="hero-subtitle">Transform your garden with intelligent features designed for Australia's unique climate</p>
                 <p class="hero-description">
-                    DreamGarden combines cutting-edge AI technology with deep knowledge of Australian gardening to help you create and maintain the perfect garden. Get personalized advice, smart planning tools, and weather-aware reminders.
+                    DreamGarden combines cutting-edge AI technology with deep knowledge of Australian gardening to help you create and maintain the perfect garden. Built by one passionate developer with incredibly strong privacy protection. Get personalized advice, smart planning tools, and weather-aware reminders — all while supporting independent software development.
                 </p>
                 <div class="cta-buttons">
                     <a href="#waitlist" class="btn-primary">Join Waitlist</a>
@@ -497,7 +498,7 @@
         <div class="container">
             <div class="section-header animate-fade-in">
                 <h2 class="section-title">Smart Features for Australian Gardens</h2>
-                <p class="section-subtitle">Everything you need to create and maintain a thriving garden in Australia's diverse climate</p>
+                <p class="section-subtitle">Everything you need to create and maintain a thriving garden in Australia's diverse climate — built with privacy-first design by an independent developer</p>
             </div>
             
             <div class="features-grid">
@@ -524,6 +525,18 @@
                     <h3 class="feature-title">Weather-Aware Advice</h3>
                     <p class="feature-description">Local forecasts power smart notifications: fertiliser timing, rain-saving tips, and frost warnings.</p>
                 </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Incredibly Strong Privacy</h3>
+                    <p class="feature-description">No trackers, no data selling, no surveillance. Your garden data stays yours — stored locally with military-grade encryption.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💚</div>
+                    <h3 class="feature-title">Support an Indie Dev</h3>
+                    <p class="feature-description">Built by one passionate developer in Australia. Your support helps create better tools for gardeners, not corporate profits.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -536,7 +549,7 @@
                 <p class="section-subtitle">Join our exclusive waitlist and get early access to Australia's most intelligent gardening companion</p>
                 
                 <div class="waitlist-form">
-                    <form>
+                    <form id="waitlistForm" action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Your full name" required>
@@ -551,6 +564,7 @@
                         </div>
                         <button type="submit" class="submit-btn">Join Waitlist</button>
                     </form>
+                    <div id="formMessage" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center;"></div>
                 </div>
             </div>
         </div>
@@ -573,5 +587,51 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.submit-btn');
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.textContent = 'Joining...';
+            submitBtn.disabled = true;
+            messageDiv.style.display = 'none';
+            
+            // Convert form data to URL encoded string
+            const data = new URLSearchParams();
+            for (let [key, value] of formData.entries()) {
+                data.append(key, value);
+            }
+            
+            // Submit to Google Apps Script
+            fetch(form.action, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: data
+            })
+            .then(() => {
+                // Show success message
+                messageDiv.innerHTML = '<div style="color: #059669; background: #f0fdf4; border: 1px solid #d1fae5; padding: 1rem; border-radius: 8px;">✅ Thanks! You\'ve been added to our waitlist. We\'ll be in touch soon!</div>';
+                messageDiv.style.display = 'block';
+                form.reset();
+            })
+            .catch((error) => {
+                // Show error message
+                messageDiv.innerHTML = '<div style="color: #dc2626; background: #fef2f2; border: 1px solid #fecaca; padding: 1rem; border-radius: 8px;">❌ Something went wrong. Please try again or contact us directly.</div>';
+                messageDiv.style.display = 'block';
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.textContent = 'Join Waitlist';
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
 </body>
 </html>
