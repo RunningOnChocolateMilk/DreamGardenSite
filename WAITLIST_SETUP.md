@@ -18,48 +18,31 @@ This is the easiest way to collect waitlist submissions and view them in a sprea
 2. Replace the default code with this:
 
 ```javascript
+// Step 1: Basic functionality (this worked)
 function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const data = e.parameter;
-  
-  const timestamp = new Date();
-  const name = data.name || '';
-  const email = data.email || '';
-  const location = data.location || '';
-  
-  // Save to spreadsheet
-  sheet.appendRow([timestamp, name, email, location]);
-  
-  // Send confirmation email to user
-  const subject = 'Welcome to DreamGarden Waitlist! 🌱';
-  const body = `
-    Hi ${name},
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    const timestamp = new Date();
     
-    Thanks for joining the DreamGarden waitlist! You're now on the list to be among the first to experience Australia's AI-powered gardening companion.
+    // Get form data safely
+    let name = '';
+    let email = '';
+    let location = '';
     
-    What happens next:
-    • We'll keep you updated on development progress
-    • You'll get early access when we launch in September 2025
-    • You'll receive exclusive gardening tips while you wait
+    if (e && e.parameter) {
+      name = e.parameter.name || '';
+      email = e.parameter.email || '';
+      location = e.parameter.location || '';
+    }
     
-    In the meantime, check out our features: https://dreamgarden.app/features
+    // Save to spreadsheet
+    sheet.appendRow([timestamp, name, email, location]);
     
-    Happy gardening!
-    The DreamGarden Team
+    return ContentService.createTextOutput('Success');
     
-    ---
-    You can unsubscribe anytime by replying to this email.
-  `;
-  
-  // Use your custom domain email
-  MailApp.sendEmail({
-    to: email,
-    from: "hello@dreamgardenapp.com",
-    subject: subject,
-    body: body
-  });
-  
-  return ContentService.createTextOutput('Success');
+  } catch (error) {
+    return ContentService.createTextOutput('Error: ' + error.message);
+  }
 }
 ```
 
