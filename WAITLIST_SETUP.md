@@ -27,7 +27,37 @@ function doPost(e) {
   const email = data.email || '';
   const location = data.location || '';
   
+  // Save to spreadsheet
   sheet.appendRow([timestamp, name, email, location]);
+  
+  // Send confirmation email to user
+  const subject = 'Welcome to DreamGarden Waitlist! 🌱';
+  const body = `
+    Hi ${name},
+    
+    Thanks for joining the DreamGarden waitlist! You're now on the list to be among the first to experience Australia's AI-powered gardening companion.
+    
+    What happens next:
+    • We'll keep you updated on development progress
+    • You'll get early access when we launch in September 2025
+    • You'll receive exclusive gardening tips while you wait
+    
+    In the meantime, check out our features: https://dreamgarden.app/features
+    
+    Happy gardening!
+    The DreamGarden Team
+    
+    ---
+    You can unsubscribe anytime by replying to this email.
+  `;
+  
+  // Use your custom domain email
+  MailApp.sendEmail({
+    to: email,
+    from: "hello@dreamgardenapp.com",
+    subject: subject,
+    body: body
+  });
   
   return ContentService.createTextOutput('Success');
 }
