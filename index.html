@@ -1,12 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamGarden - Australia's AI-powered gardening companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #059669;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #059669;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23059669" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23059669" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23059669" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #059669;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #059669;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-description {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Waitlist Section */
+        .waitlist {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+        }
+
+        .waitlist-content {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .waitlist-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #059669;
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #10b981;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .waitlist-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .feature-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
 </head>
 <body>
-  <h1>Hello World 👋</h1>
-  <p>Welcome to your new GitHub Pages site!</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">DreamGarden</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="#waitlist">Join Waitlist</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="https://instagram.com/dreamgarden.app" target="_blank">Instagram</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-fade-in">
+                <div class="hero-badge">Launching September 2025</div>
+                <h1 class="hero-title">Australia's AI-powered gardening companion</h1>
+                <p class="hero-subtitle">Transform your garden with intelligent features designed for Australia's unique climate</p>
+                <p class="hero-description">
+                    DreamGarden combines cutting-edge AI technology with deep knowledge of Australian gardening to help you create and maintain the perfect garden. Get personalized advice, smart planning tools, and weather-aware reminders.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#waitlist" class="btn-primary">Join Waitlist</a>
+                    <a href="features.html" class="btn-secondary">Explore Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">Smart Features for Australian Gardens</h2>
+                <p class="section-subtitle">Everything you need to create and maintain a thriving garden in Australia's diverse climate</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">AI Layout Planner</h3>
+                    <p class="feature-description">Get intelligent garden layouts optimized for your space, soil type, and local climate. Our AI considers sunlight patterns, drainage, and plant compatibility.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌤️</div>
+                    <h3 class="feature-title">Weather-Aware Reminders</h3>
+                    <p class="feature-description">Receive smart notifications based on real-time weather data. Know exactly when to water, fertilize, or protect your plants from extreme conditions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <h3 class="feature-title">Fertiliser Tracking</h3>
+                    <p class="feature-description">Track your fertilisation schedule with precision. Get recommendations for the best fertilisers for Australian soil and your specific plants.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Personalized AI Tips</h3>
+                    <p class="feature-description">Get expert gardening advice tailored to your location, climate zone, and specific plants. Learn from AI trained on Australian gardening best practices.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Mobile-First Design</h3>
+                    <p class="feature-description">Access your garden information anywhere, anytime. Take photos, get instant plant identification, and track your progress on the go.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3 class="feature-title">Native Plant Database</h3>
+                    <p class="feature-description">Comprehensive database of Australian native plants with care guides, seasonal information, and wildlife attraction details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section class="waitlist" id="waitlist">
+        <div class="container">
+            <div class="waitlist-content animate-fade-in">
+                <h2 class="section-title">Be First to Experience DreamGarden</h2>
+                <p class="section-subtitle">Join our exclusive waitlist and get early access to Australia's most intelligent gardening companion</p>
+                
+                <div class="waitlist-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location (Optional)</label>
+                            <input type="text" id="location" name="location" placeholder="City, State">
+                        </div>
+                        <button type="submit" class="submit-btn">Join Waitlist</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DreamGarden</div>
+                <ul class="footer-links">
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="#waitlist">Waitlist</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="https://instagram.com/dreamgarden.app" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:hello@dreamgarden.app">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DreamGarden. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

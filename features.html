@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - DreamGarden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #059669;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #059669;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-section {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #059669;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-benefits {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-benefits li {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #059669;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #10b981;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 2rem;
+            }
+
+            .cta-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 3rem 0 2rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .feature-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">DreamGarden</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="index.html#waitlist">Join Waitlist</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="https://instagram.com/dreamgarden.app" target="_blank">Instagram</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-fade-in">🌱 DreamGarden – App Features</h1>
+            <p class="page-subtitle animate-fade-in">Discover how our AI-powered platform revolutionizes gardening in Australia</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI Gardening Assistant</h3>
+                    <p class="feature-description">Smart, friendly, and hyper-local advice tailored to your garden. Ask it anything — from pest problems to planting times.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Garden Memory System</h3>
+                    <p class="feature-description">Remembers everything: what you planted, where and when you planted it, and how it's growing over time. No more guessing or flipping through notebooks.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🪴</div>
+                    <h3 class="feature-title">Bed & Layout Planner</h3>
+                    <p class="feature-description">Visualise your garden beds and what's planted where. Plan ahead, track your rotations, and avoid overcrowding.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌦️</div>
+                    <h3 class="feature-title">Weather-Aware Advice</h3>
+                    <p class="feature-description">Local forecasts power smart notifications: fertiliser timing, rain-saving tips, and frost warnings. Your garden, tuned to the week ahead.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📆</div>
+                    <h3 class="feature-title">Garden Calendar & Reminders</h3>
+                    <p class="feature-description">Custom tasks, feeding schedules, and seasonal to-dos — all in one timeline. Gentle nudges, not nagging alerts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Privacy-First by Design</h3>
+                    <p class="feature-description">No trackers. No selling your data. Your garden stays yours — stored locally unless you say otherwise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate-fade-in">
+                <h2 class="cta-title">Ready to Transform Your Garden?</h2>
+                <p class="cta-description">Join thousands of Australian gardeners who are already using DreamGarden to create thriving, beautiful gardens.</p>
+                <a href="index.html#waitlist" class="btn-primary">Join the Waitlist</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DreamGarden</div>
+                <ul class="footer-links">
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="index.html#waitlist">Waitlist</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="https://instagram.com/dreamgarden.app" target="_blank">Instagram</a></li>
+                    <li><a href="mailto:hello@dreamgarden.app">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DreamGarden. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
