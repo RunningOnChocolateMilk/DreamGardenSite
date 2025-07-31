@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -619,6 +620,14 @@
                 messageDiv.innerHTML = '<div style="color: #059669; background: #f0fdf4; border: 1px solid #d1fae5; padding: 1rem; border-radius: 8px;">✅ Thanks! You\'ve been added to our waitlist. We\'ll be in touch soon!</div>';
                 messageDiv.style.display = 'block';
                 form.reset();
+                
+                // Track conversion
+                // if (typeof gtag !== 'undefined') {
+                //     gtag('event', 'waitlist_signup', {
+                //         'event_category': 'engagement',
+                //         'event_label': 'waitlist_form'
+                //     });
+                // }
             })
             .catch((error) => {
                 // Show error message

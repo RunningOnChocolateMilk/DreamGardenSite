@@ -18,7 +18,6 @@ This is the easiest way to collect waitlist submissions and view them in a sprea
 2. Replace the default code with this:
 
 ```javascript
-// Step 1: Basic functionality (this worked)
 function doPost(e) {
   try {
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -37,6 +36,54 @@ function doPost(e) {
     
     // Save to spreadsheet
     sheet.appendRow([timestamp, name, email, location]);
+    
+    // Send confirmation email to user
+    const subject = 'Welcome to DreamGarden Waitlist! 🌱';
+    const body = `
+Hi ${name},
+
+Thanks for joining the DreamGarden waitlist! You're now on the list to be among the first to experience Australia's AI-powered gardening companion.
+
+What happens next:
+• We'll keep you updated on development progress
+• You'll get early access when we launch in September 2025
+• You'll receive exclusive gardening tips while you wait
+
+In the meantime, check out our features: https://dreamgarden.app/features
+
+Happy gardening!
+The DreamGarden Team
+
+---
+You can unsubscribe anytime by replying to this email.
+  `;
+    
+    // Send email from your custom domain
+    MailApp.sendEmail({
+      to: email,
+      from: "hello@dreamgardenapp.com",
+      subject: subject,
+      body: body
+    });
+    
+    // Send notification to you (optional)
+    const notificationSubject = 'New DreamGarden Waitlist Signup';
+    const notificationBody = `
+New waitlist signup:
+
+Name: ${name}
+Email: ${email}
+Location: ${location}
+Date: ${timestamp.toLocaleString()}
+
+Total waitlist size: ${sheet.getLastRow() - 1}
+  `;
+    
+    MailApp.sendEmail({
+      to: "hello@dreamgardenapp.com", // or your personal email
+      subject: notificationSubject,
+      body: notificationBody
+    });
     
     return ContentService.createTextOutput('Success');
     
