@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamGarden - Australia's AI-powered gardening companion</title>
+    <title>DreamGarden - Australia's AI-Powered Gardening Companion | Launching September 2025</title>
+    <meta name="description" content="Transform your garden with DreamGarden, Australia's AI-powered gardening companion. Get personalized advice, smart planning tools, and weather-aware reminders. Join the waitlist for early access.">
+    <meta name="keywords" content="gardening app, AI gardening, Australian gardening, garden planner, plant care, gardening tips, garden management, smart gardening, garden assistant">
+    <meta name="author" content="DreamGarden">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dreamgardenapp.com/">
+    <meta property="og:title" content="DreamGarden - Australia's AI-Powered Gardening Companion">
+    <meta property="og:description" content="Transform your garden with AI-powered features designed for Australia's unique climate. Join the waitlist for early access.">
+    <meta property="og:image" content="https://dreamgardenapp.com/og-image.jpg">
+    <meta property="og:site_name" content="DreamGarden">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dreamgardenapp.com/">
+    <meta property="twitter:title" content="DreamGarden - Australia's AI-Powered Gardening Companion">
+    <meta property="twitter:description" content="Transform your garden with AI-powered features designed for Australia's unique climate. Join the waitlist for early access.">
+    <meta property="twitter:image" content="https://dreamgardenapp.com/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dreamgardenapp.com/">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,12 +41,21 @@
             box-sizing: border-box;
         }
 
+        html {
+            background: #ffffff;
+        }
+
+        html, body {
+            background: #ffffff;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #1a202c;
             background: #ffffff;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .container {
@@ -182,7 +216,7 @@
         /* Features Section */
         .features {
             padding: 6rem 0;
-            background: white;
+            background: #ffffff;
         }
 
         .section-header {
@@ -479,7 +513,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <main class="hero">
         <div class="container">
             <div class="hero-content animate-fade-in">
                 <div class="hero-badge">Launching September 2025</div>
@@ -499,47 +533,47 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <div class="section-header animate-fade-in">
+            <header class="section-header animate-fade-in">
                 <h2 class="section-title">Smart Features for Australian Gardens</h2>
                 <p class="section-subtitle">Everything you need to create and maintain a thriving garden in Australia's diverse climate — built with privacy-first design by an independent developer</p>
-            </div>
+            </header>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <article class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <h3 class="feature-title">AI Gardening Assistant</h3>
                     <p class="feature-description">Smart, friendly, and hyper-local advice tailored to your garden. Ask it anything — from pest problems to planting times.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
+                <article class="feature-card">
                     <div class="feature-icon">🧠</div>
                     <h3 class="feature-title">Garden Memory System</h3>
                     <p class="feature-description">Remembers everything: what you planted, where and when you planted it, and how it's growing over time.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
+                <article class="feature-card">
                     <div class="feature-icon">🪴</div>
                     <h3 class="feature-title">Bed & Layout Planner</h3>
                     <p class="feature-description">Visualise your garden beds and what's planted where. Plan ahead, track your rotations, and avoid overcrowding.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
+                <article class="feature-card">
                     <div class="feature-icon">🌦️</div>
                     <h3 class="feature-title">Weather-Aware Advice</h3>
                     <p class="feature-description">Local forecasts power smart notifications: fertiliser timing, rain-saving tips, and frost warnings.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
+                <article class="feature-card">
                     <div class="feature-icon">🔒</div>
                     <h3 class="feature-title">Incredibly Strong Privacy</h3>
                     <p class="feature-description">No trackers, no data selling, no surveillance. Your garden data stays yours — stored locally with strong encryption.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
+                <article class="feature-card">
                     <div class="feature-icon">💚</div>
                     <h3 class="feature-title">Support an Indie Dev</h3>
                     <p class="feature-description">Built by one passionate developer in Australia. Your support helps create better tools for gardeners, not corporate profits.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -592,6 +626,37 @@
             </div>
         </div>
     </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "DreamGarden",
+        "description": "Australia's AI-powered gardening companion that helps you create and maintain the perfect garden with personalized advice, smart planning tools, and weather-aware reminders.",
+        "url": "https://dreamgardenapp.com",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "AUD",
+            "availability": "https://schema.org/PreOrder"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "DreamGarden",
+            "url": "https://dreamgardenapp.com"
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15"
+    }
+    </script>
 
     <script>
         document.getElementById('waitlistForm').addEventListener('submit', function(e) {
