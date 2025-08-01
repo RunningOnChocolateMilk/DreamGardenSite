@@ -35,6 +35,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* Reset everything to white first */
+        *, *::before, *::after {
+            background-color: #ffffff !important;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -46,12 +51,33 @@
             background: transparent;
         }
 
+        /* Aggressive white background reset */
+        html, body, div, section, article, main, aside, header, footer {
+            background-color: #ffffff !important;
+        }
+
+        /* Specific overrides for sections that should have different backgrounds */
+        .hero {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%) !important;
+        }
+
+        .waitlist {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%) !important;
+        }
+
+        footer {
+            background: #1a202c !important;
+        }
+
 
 
         html, body {
             background: #ffffff !important;
+            background-color: #ffffff !important;
             margin: 0;
             padding: 0;
+            width: 100%;
+            min-height: 100vh;
         }
 
         body {
@@ -59,8 +85,10 @@
             line-height: 1.6;
             color: #1a202c;
             background: #ffffff !important;
+            background-color: #ffffff !important;
             overflow-x: hidden;
             min-height: 100vh;
+            width: 100%;
         }
 
         .container {
