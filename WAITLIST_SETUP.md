@@ -194,4 +194,4 @@ If you deploy to Netlify, you can use their built-in form handling:
 3. Test the form submission
 4. Monitor your waitlist growth!
 
-Need help? Contact: hello@dreamgarden.app 
+Need help? Contact: hello@dreamgardenapp.com 
