@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://dreamgardenapp.com/sitemap.xml
 
-# Crawl delay (optional)
+# Crawl-delay for respectful crawling
 Crawl-delay: 1 
