@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamGarden v1 Launch Announcement - DreamGarden</title>
+    <title>DreamGarden Launch: September 13, 2025 - What to Expect | DreamGarden</title>
+    <meta name="description" content="DreamGarden launches September 13, 2025! Discover what to expect on launch day, app features, and how to prepare for Australia's AI-powered gardening companion.">
+    <meta name="keywords" content="DreamGarden launch, September 2025, gardening app launch, AI gardening app, Australian gardening app">
+    <meta name="author" content="DreamGarden">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dreamgardenapp.com/launch-announcement.html">
+    <meta property="og:title" content="DreamGarden Launch: September 13, 2025 - What to Expect">
+    <meta property="og:description" content="DreamGarden launches September 13, 2025! Discover what to expect on launch day, app features, and how to prepare for Australia's AI-powered gardening companion.">
+    <meta property="og:image" content="https://dreamgardenapp.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dreamgardenapp.com/launch-announcement.html">
+    <meta property="twitter:title" content="DreamGarden Launch: September 13, 2025 - What to Expect">
+    <meta property="twitter:description" content="DreamGarden launches September 13, 2025! Discover what to expect on launch day, app features, and how to prepare for Australia's AI-powered gardening companion.">
+    <meta property="twitter:image" content="https://dreamgardenapp.com/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dreamgardenapp.com/launch-announcement.html">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -102,199 +127,279 @@
 
         .article-meta {
             color: #64748b;
-            font-size: 1rem;
+            font-size: 0.875rem;
             margin-bottom: 2rem;
         }
 
+        .article-excerpt {
+            font-size: 1.125rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Launch Countdown */
+        .launch-countdown {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px solid #d1fae5;
+        }
+
+        .countdown-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-unit {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            min-width: 80px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #059669;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Content */
         .article-content {
             font-size: 1.125rem;
             line-height: 1.8;
             color: #374151;
         }
 
-        .article-content p {
-            margin-bottom: 1.5rem;
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin: 2.5rem 0 1rem;
         }
 
-        .article-content h2 {
+        .article-content h3 {
             font-size: 1.5rem;
             font-weight: 600;
             color: #1a202c;
             margin: 2rem 0 1rem;
         }
 
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
         .article-content ul {
             margin: 1.5rem 0;
-            padding-left: 1.5rem;
+            padding-left: 2rem;
         }
 
         .article-content li {
-            margin-bottom: 0.75rem;
-            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-            border: 1px solid #d1fae5;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .highlight-box h3 {
+        .article-content strong {
             color: #059669;
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
             font-weight: 600;
         }
 
+        /* Feature Boxes */
+        .feature-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-box h4 {
+            color: #059669;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-box p {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        /* Launch Day Schedule */
+        .launch-schedule {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .launch-schedule h3 {
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .schedule-time {
+            background: #059669;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-right: 1rem;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .schedule-description {
+            color: #374151;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
             border-radius: 16px;
             padding: 2rem;
             margin: 3rem 0;
             text-align: center;
+            color: white;
         }
 
         .cta-title {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1a202c;
             margin-bottom: 1rem;
         }
 
         .cta-description {
-            color: #64748b;
             margin-bottom: 1.5rem;
+            opacity: 0.9;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #059669, #10b981);
-            color: white;
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #059669;
             padding: 1rem 2rem;
-            border-radius: 12px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
-            border: none;
-            cursor: pointer;
-            display: inline-block;
+            transition: transform 0.2s ease;
         }
 
-        .btn-primary:hover {
+        .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #059669;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: #047857;
         }
 
         /* Footer */
         footer {
-            background: #1a202c;
-            color: white;
-            padding: 3rem 0 2rem;
+            background: #f8fafc;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #e2e8f0;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .footer-logo {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: #10b981;
+            color: #059669;
         }
 
         .footer-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
         }
 
         .footer-links a {
-            color: #9ca3af;
+            color: #64748b;
             text-decoration: none;
-            transition: color 0.2s ease;
+            font-size: 0.875rem;
         }
 
         .footer-links a:hover {
-            color: #10b981;
+            color: #059669;
         }
 
         .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #374151;
             text-align: center;
-            color: #9ca3af;
+            color: #94a3b8;
+            font-size: 0.875rem;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
+            .countdown-timer {
+                flex-wrap: wrap;
+                gap: 0.5rem;
             }
-
-            .nav-links {
-                display: none;
+            
+            .countdown-unit {
+                min-width: 60px;
+                padding: 0.75rem;
             }
-
-            .article-title {
-                font-size: 2rem;
+            
+            .countdown-number {
+                font-size: 1.5rem;
             }
-
-            .article-content {
-                font-size: 1rem;
+            
+            .feature-boxes {
+                grid-template-columns: 1fr;
             }
-        }
-
-        @media (max-width: 480px) {
-            .article {
-                padding: 2rem 0;
+            
+            .schedule-item {
+                flex-direction: column;
+                text-align: center;
             }
-
-            .article-title {
-                font-size: 1.75rem;
+            
+            .schedule-time {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
             }
-
-            .highlight-box {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
@@ -306,60 +411,172 @@
                 <a href="index.html" class="logo">DreamGarden</a>
                 <nav>
                     <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="features.html">Features</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="posts.html">Posts</a></li>
-                        <li><a href="index.html#waitlist">Join Waitlist</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="index.html#waitlist">Waitlist</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Article -->
-    <section class="article">
+    <!-- Main Article -->
+    <main class="article">
         <div class="container">
-            <a href="posts.html" class="back-link">← Back to Posts</a>
-            
-            <div class="article-header animate-fade-in">
-                <div class="article-category">App Update</div>
-                <h1 class="article-title">DreamGarden v1 Launch Announcement</h1>
-                <div class="article-meta">January 15, 2025</div>
+            <!-- Article Header -->
+            <div class="article-header">
+                <div class="article-category">Launch Announcement</div>
+                <h1 class="article-title">DreamGarden Launch: September 13, 2025</h1>
+                <div class="article-meta">Published January 15, 2025 • 5 min read</div>
+                <p class="article-excerpt">
+                    The wait is almost over! DreamGarden, Australia's AI-powered gardening companion, launches on September 13, 2025. Here's everything you need to know about launch day and how to prepare.
+                </p>
             </div>
 
-            <div class="article-content animate-fade-in">
-                <p>After months of design, testing, and digging deep into what gardeners really need, we're thrilled to announce that DreamGarden v1 is set to launch this September!</p>
+            <!-- Launch Countdown -->
+            <div class="launch-countdown">
+                <h3 class="countdown-title">🚀 Launch Countdown</h3>
+                <div class="countdown-timer">
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="days">000</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+                <p style="color: #059669; font-weight: 500; margin: 0;">Mark your calendar - September 13, 2025!</p>
+            </div>
 
-                <p>Whether you're growing veggies on your balcony or managing a full backyard garden, DreamGarden is built to be your smart, friendly companion through every season.</p>
+            <!-- Article Content -->
+            <div class="article-content">
+                <p>
+                    After months of development, testing, and refinement, we're thrilled to announce that <strong>DreamGarden will officially launch on Saturday, September 13, 2025</strong>. This isn't just another gardening app – it's Australia's first AI-powered gardening companion designed specifically for our unique climate and growing conditions.
+                </p>
 
-                <div class="highlight-box">
-                    <h3>What to expect in v1:</h3>
-                    <ul>
-                        <li>🪴 Garden bed planner – map out your space, crop by crop</li>
-                        <li>📍 Localised planting guides – tailored to Australian conditions</li>
-                        <li>⏰ Seasonal reminders & fertiliser timers – never miss a beat</li>
-                        <li>📓 Garden logbook – track what you plant and how it grows</li>
-                        <li>🤖 AI gardening assistant – answers, tips, and troubleshooting built into the app</li>
-                    </ul>
+                <h2>What to Expect on Launch Day</h2>
+                
+                <p>
+                    September 13, 2025, will be a celebration of Australian gardening innovation. Here's what you can look forward to:
+                </p>
+
+                <div class="launch-schedule">
+                    <h3>📅 Launch Day Schedule</h3>
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:00 AM</div>
+                        <div class="schedule-description">App goes live on the App Store</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:00 AM</div>
+                        <div class="schedule-description">Live Instagram garden tour and Q&A</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">2:00 PM</div>
+                        <div class="schedule-description">Community garden photo sharing session</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">4:00 PM</div>
+                        <div class="schedule-description">Live feature demonstration and tips</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">6:00 PM</div>
+                        <div class="schedule-description">Launch celebration wrap-up and community chat</div>
+                    </div>
                 </div>
 
-                <p>This is just the beginning. DreamGarden is designed to grow alongside you, with new features and improvements already in the works.</p>
+                <h2>Why September 13?</h2>
+                
+                <p>
+                    We chose September 13 for several strategic reasons:
+                </p>
+                
+                <ul>
+                    <li><strong>Spring Momentum:</strong> Spring is in full swing across Australia, making it the perfect time to introduce new gardening tools</li>
+                    <li><strong>Weekend Launch:</strong> Saturday allows families and weekend gardeners to explore the app together</li>
+                    <li><strong>Growing Season:</strong> Maximum growing season ahead for users to test and benefit from all features</li>
+                    <li><strong>Weather Conditions:</strong> Typically pleasant weather across most of Australia for outdoor app testing</li>
+                </ul>
 
-                <p>We're aiming to open the gates in early September, just in time for spring 🌼</p>
-
-                <p>Until then, we're inviting early testers, collecting feedback, and polishing up every little detail.</p>
-
-                <div class="cta-section">
-                    <h3 class="cta-title">Want to be first in line?</h3>
-                    <p class="cta-description">Join the waitlist and get notified as soon as we launch. You'll also get early access perks and the chance to shape the future of DreamGarden.</p>
-                    <a href="index.html#waitlist" class="btn-primary">Join the Waitlist</a>
+                <h2>What You'll Get on Launch Day</h2>
+                
+                <div class="feature-boxes">
+                    <div class="feature-box">
+                        <h4>🤖 AI Gardening Assistant</h4>
+                        <p>Get personalized advice for Australian conditions, from pest problems to planting times</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>🧠 Garden Memory System</h4>
+                        <p>Never forget what you planted, where, and when. Track your garden's journey over time</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>📱 Bed Planner</h4>
+                        <p>Visualize your garden layout, plan rotations, and avoid overcrowding</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>🌤️ Weather Integration</h4>
+                        <p>Smart notifications based on local forecasts for optimal gardening decisions</p>
+                    </div>
                 </div>
 
-                <p>Thanks for being part of this journey. We can't wait to see what you grow 🌱</p>
+                <h2>How to Prepare for Launch</h2>
+                
+                <p>
+                    While you wait for September 13, here are some things you can do to get ready:
+                </p>
+                
+                <ul>
+                    <li><strong>Join our waitlist</strong> to get notified the moment the app goes live</li>
+                    <li><strong>Follow us on social media</strong> for behind-the-scenes updates and gardening tips</li>
+                    <li><strong>Start planning your spring garden</strong> - DreamGarden will help you execute it perfectly</li>
+                    <li><strong>Take photos of your current garden</strong> to compare with your progress using the app</li>
+                    <li><strong>Research what you want to plant</strong> - the AI assistant will have answers to all your questions</li>
+                </ul>
+
+                <h2>What Makes DreamGarden Special</h2>
+                
+                <p>
+                    DreamGarden isn't just another gardening app. It's built specifically for Australian gardeners by someone who understands our unique challenges:
+                </p>
+                
+                <ul>
+                    <li><strong>Local Knowledge:</strong> Designed for Australian climate, soil, and growing conditions</li>
+                    <li><strong>Privacy-First:</strong> Your garden data stays on your device with strong encryption</li>
+                    <li><strong>Independent Development:</strong> Built by one passionate developer, not a corporate team</li>
+                    <li><strong>Community Focused:</strong> Designed to help Australian gardeners succeed together</li>
+                </ul>
+
+                <h2>Join the Community</h2>
+                
+                <p>
+                    The DreamGarden community is already growing, with gardeners from across Australia joining our waitlist. Whether you're a beginner or an expert, there's a place for you in our community.
+                </p>
+
+                <p>
+                    We'll be sharing regular updates, gardening tips, and behind-the-scenes content as we count down to September 13. Make sure you're part of the journey!
+                </p>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3 class="cta-title">Ready to Transform Your Garden?</h3>
+                <p class="cta-description">
+                    Join thousands of Australian gardeners who are already on our waitlist. Be among the first to experience DreamGarden when it launches on September 13, 2025.
+                </p>
+                <a href="index.html#waitlist" class="cta-button">Join the Waitlist</a>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -380,5 +597,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        function updateCountdown() {
+            const launchDate = new Date('September 13, 2025 09:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(3, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '000';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
 </body>
 </html> 
