@@ -1,0 +1,23 @@
+{
+  "name": "DreamGarden - Australia's AI-Powered Gardening Companion",
+  "short_name": "DreamGarden",
+  "description": "Transform your garden with intelligent features designed for Australia's unique climate",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#059669",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "productivity", "utilities"],
+  "lang": "en-AU",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

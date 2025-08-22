@@ -12,11 +12,16 @@
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
     <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#059669">
+    <meta name="msapplication-TileColor" content="#059669">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="author" content="DreamGarden">
     <meta name="robots" content="index, follow">
     
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -31,6 +36,8 @@
     <meta property="twitter:title" content="DreamGarden - Australia's AI-Powered Gardening Companion">
     <meta property="twitter:description" content="Transform your garden with intelligent features designed for Australia's unique climate. Join the waitlist for early access.">
     <meta property="twitter:image" content="https://dreamgardenapp.com/og-image.jpg">
+    <meta property="og:site_name" content="DreamGarden">
+    <meta property="og:locale" content="en_AU">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://dreamgardenapp.com/">
@@ -38,6 +45,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,6 +54,8 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//script.google.com">
+    
+
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -150,6 +160,42 @@
             "text": "DreamGarden uses incredibly strong privacy protection with no trackers, no data selling, and no surveillance. Your garden data stays on your device with strong encryption."
           }
         }
+      ]
+    }
+    </script>
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "DreamGarden",
+      "description": "Australia's AI-powered gardening companion app",
+      "url": "https://dreamgardenapp.com",
+      "telephone": "+61-000-000-000",
+      "email": "hello@dreamgardenapp.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AU",
+        "addressRegion": "Australia"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-25.2744",
+        "longitude": "133.7751"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "sameAs": [
+        "https://dreamgardenapp.com"
       ]
     }
     </script>
@@ -812,13 +858,7 @@
                 messageDiv.style.display = 'block';
                 form.reset();
                 
-                // Track conversion
-                // if (typeof gtag !== 'undefined') {
-                //     gtag('event', 'waitlist_signup', {
-                //         'event_category': 'engagement',
-                //         'event_label': 'waitlist_form'
-                //     });
-                // }
+
             })
             .catch((error) => {
                 // Show error message
@@ -833,5 +873,22 @@
             });
         });
     </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+    
+
 </body>
 </html>

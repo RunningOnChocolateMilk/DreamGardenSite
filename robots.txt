@@ -25,12 +25,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Allow social media crawlers
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: / 
+ 
