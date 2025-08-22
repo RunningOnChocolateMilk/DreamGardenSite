@@ -1,8 +1,36 @@
 User-agent: *
 Allow: /
 
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /favicon.svg
+Allow: /robots.txt
+
 # Sitemap
 Sitemap: https://dreamgardenapp.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
-Crawl-delay: 1 
+Crawl-delay: 1
+
+# Additional directives for better SEO
+# Allow Google to crawl and index all content
+User-agent: Googlebot
+Allow: /
+
+# Allow Bing to crawl and index all content
+User-agent: Bingbot
+Allow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: / 

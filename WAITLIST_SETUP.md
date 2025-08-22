@@ -46,7 +46,7 @@ Thanks for joining the DreamGarden waitlist! You're now on the list to be among 
 
 What happens next:
 • We'll keep you updated on development progress
-• You'll get early access when we launch in September 2025
+• You'll get early access when we launch in October 2025
 • You'll receive exclusive gardening tips while you wait
 
 In the meantime, check out our features: https://dreamgarden.app/features

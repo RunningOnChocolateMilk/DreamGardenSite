@@ -1,38 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://dreamgardenapp.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dreamgardenapp.com/og-image.jpg</image:loc>
+      <image:title>DreamGarden - Australia's AI-Powered Gardening Companion</image:title>
+      <image:caption>Transform your garden with intelligent features designed for Australia's unique climate</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://dreamgardenapp.com/features.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://dreamgardenapp.com/pricing.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dreamgardenapp.com/posts.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dreamgardenapp.com/launch-announcement.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://dreamgardenapp.com/september-gardening-guide.html</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreamgardenapp.com/spring-planting-guide.html</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://dreamgardenapp.com/privacy.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
